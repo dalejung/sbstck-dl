@@ -58,7 +58,7 @@ func (p *Post) ToMD(withTitle bool) (string, error) {
 		if err != nil {
 			return "", err
 		}
-		return fmt.Sprintf("# %s\n\n%s", p.Title, body), nil
+		return fmt.Sprintf("# %s \n[post link](%s)\n\n%s", p.Title, p.CanonicalUrl, body), nil
 	}
 
 	return mdConverter.ConvertString(p.BodyHTML)
